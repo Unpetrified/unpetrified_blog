@@ -1,0 +1,257 @@
+:root {
+    --headingColor: rgba(217, 217, 217);
+    --navColor: var(--headingColor);
+    --textColor: rgb(38, 38, 38);
+    --bgColor: rgba(240, 242, 242);
+    --btnColor: rgba(240, 240, 240, 0.94);
+    --btnHoverColor: rgb(25, 79, 255);
+    --textHeadingColor: rgba(23, 5, 76);
+    --headingHoverColor: rgba(242, 68, 5);
+    --headingWeight: 900;
+    --bodyTextSize: .7rem;
+    --logoWidth: 90%;
+    --logoAspectR: 10/1;
+    --oneRem: 1rem;
+    --oneEm: 1em;
+    --aboutMeTextSize: .6rem;
+    --aboutMeImgDivWidth: 94%;
+    --aboutMeImgDivMargin: 3%;
+    --contactImgWidth: 16px;
+    --contactImgMargin: 0px 15px;
+}
+
+body {
+    background-color: var(--bgColor);
+    color: var(--textColor);
+    font-size: var(--bodyTextSize);
+    margin: 0;
+}
+
+/* page heading start  */
+
+.page-heading {
+    background-color: var(--headingColor);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+img[alt=logo] {
+    width: var(--logoWidth);
+    aspect-ratio: var(--logoAspectR);
+}
+
+/* navigation toggle start */
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    margin-right: 1em;
+    display: flex;
+    align-items: center;
+    transform: rotate(0deg);
+    transition: transform 300ms ease;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before, 
+.nav-toggle-label span::after {
+    display: block;
+    background-color: black;
+    height: 1px;
+    width: 1.5em;
+    border-radius: 1rem;
+    position: relative;
+}
+
+.nav-toggle-label span::before, 
+.nav-toggle-label span::after {
+    content: "";
+}
+
+.nav-toggle-label span::before {
+    top: -.45em;
+}
+
+.nav-toggle-label span::after {
+    top: .4em;
+}
+
+.nav-toggle:checked ~ .nav-toggle-label {
+    transform: rotate(90deg);
+    transition: transform 300ms ease;
+}
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1, 1);
+    transition: transform 300ms ease-out;
+}
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 200ms ease-in 150ms;
+}
+
+/* navigation toggle end  */
+
+/* navigation start  */
+
+nav {
+    position: absolute;
+    text-align: center;
+    top: 100%;
+    background-color: var(--navColor);
+    width: 50%;
+    right: 0;
+    border-bottom-left-radius: 2em;
+    box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.5);
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 300ms ease-out;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0 1em;
+    padding: 0;
+}
+
+nav li {
+    padding: 1em;
+    width: 50%;
+    margin: 0 25%;
+    color: var(--textColor);
+}
+
+nav li:first-child {
+    margin-top: 1em;
+}
+
+nav li:last-child {
+    margin-bottom: 1em;
+}
+
+nav a {
+    text-decoration: none;
+    padding: .5em;
+    opacity: 0;
+    color: var(--textColor);
+    transition: opacity 150ms ease-out;
+}
+
+nav li:hover {
+    background-color: var(--btnHoverColor);
+    border-bottom-left-radius: 1em;
+}
+
+nav li:hover > a {
+    color: white;
+}
+
+/* navigation end  */
+
+/* page heading end  */
+
+/* about me start  */
+
+.row {
+    text-align: center;
+    margin: 2em 0;
+    font-weight: 900;
+    font-size: .5rem;
+    color: var(--textHeadingColor);
+    display: block;
+}
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--oneRem);
+    box-shadow: 0 1px 5px 1px rgba(23, 5, 76, .3);
+    margin: 0;
+    margin-top: 1em;
+}
+
+.about-me div {
+    font-size: var(--aboutMeTextSize);
+    width: var(--aboutMeImgDivWidth);
+    margin: var(--aboutMeImgDivMargin);
+}
+
+#me {
+    border-radius: var(--oneEm);
+}
+
+.row a {
+    text-decoration: none;
+}
+
+#social > a svg {
+    width: var(--contactImgWidth);
+    margin: var(--contactImgMargin);
+}
+
+/* about me end  */
+
+@media screen and (min-width: 700px) {
+
+    .page-heading {
+        display: grid;
+        grid-template-columns: 7fr 3fr;
+    }
+
+    .nav-toggle-label {
+        display: none;
+    }
+
+    nav {
+        all: unset;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    nav ul {
+        margin: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    nav li {
+        all: unset;
+        padding: .5em 1.5em;
+        transition: color, 200ms ease-in;
+    }
+
+    nav li:hover {
+        border-radius: .3em;
+    }
+
+    nav li:first-child {
+        margin-top: 0;
+    }
+
+    nav li:last-child {
+        margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1;
+        font-size: 1.2rem;
+    }
+
+    .row {
+        font-size: .8rem;
+    }
+
+    .about-me div {
+        --aboutMeTextSize: .8rem;
+    }
+}

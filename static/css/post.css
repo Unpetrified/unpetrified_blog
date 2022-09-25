@@ -1,0 +1,253 @@
+:root {
+    --textColor: rgb(38, 38, 38);
+    --btnColor: rgba(240, 240, 240, 0.94);
+    --btnHoverColor: rgb(25, 79, 255);
+    --textHeadingColor: rgba(23, 5, 76);
+    --headingWeight: 700;
+    --contentHeadingSize: 1.5rem;
+    --contentTextSize: 1rem;
+    --contentImgWidth: 80%;
+    --contentImgMargin: .5em 10%;
+    --contentHeading: 1.3rem;
+    --contentAuthor: .6rem;
+    --contentPText: .8rem;
+    --oneRem: 1rem;
+    --oneEm: 1em;
+    --cardImgWidth: 95%;
+    --cardImgRadius: .2rem;
+}
+
+/* post content start  */
+
+.rule {
+    display: block;
+    background-color: var(--textColor);
+    height: 1px;
+    width: 90%;
+    margin: 5%;
+    border-radius: 1rem;
+    position: relative;
+}
+
+.content {
+    padding: 1rem;
+    padding-bottom: 0;
+}
+
+.content > img {
+    width: var(--contentImgWidth);
+    margin: var(--contentImgMargin);
+    border-radius: 1em;
+}
+
+.content > h4 {
+    font-size: var(--contentHeading);
+    margin: 0;
+    color: var(--textHeadingColor);
+    text-transform: capitalize;
+}
+
+.content span {
+    font-style: italic;
+    font-weight: lighter;
+    font-size: var(--contentAuthor);
+    padding: 0 .2rem;
+}
+
+.content p {
+    text-align: justify;
+    font-size: var(--contentPText);
+    padding: 0 .6rem;
+}
+
+/* post content end  */
+
+/* comment start  */
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+}
+
+.comment h5 {
+    color: var(--btnHoverColor);
+    margin: 0;
+}
+
+.comment p {
+    margin: .1em 0;
+    color: var(--textColor);
+    font-size: .65rem;
+    text-align: justify;
+}
+
+.comment div {
+    font-size: .4rem;
+    color: gray;
+    margin-bottom: .4em;
+}
+
+.comments form {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-top: 1em;
+}
+
+.comments form p {
+    width: 90%;
+    margin: auto;
+}
+
+.comments form label {
+    display: none;
+}
+
+.comment-body {
+    border: none;
+    border-bottom: 1px solid rgb(70, 69, 69);
+    background-color: rgb(212, 213, 226);
+    width: 100%;
+    font-size: 1.25em;
+    height: 1.4em;
+    outline: none;
+}
+
+.comment-body:focus {
+    background-color: aliceblue;
+}
+
+input[type=submit] {
+    margin: 0 1em;
+    padding: .5em;
+    border: 1px solid black;
+    background-color: var(--btnColor);
+    color: var(--textColor);
+    font-size: smaller;
+    border-radius: .2rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20%;
+}
+
+input[type=submit]:hover {
+    background-color: var(--btnHoverColor);
+    color: white;
+}
+
+/* comment end  */
+
+/* recent blog posts start */
+
+.card {
+    display: grid;
+    grid-template-columns: 4fr 7fr;
+    gap: var(--oneRem);
+    height: fit-content;
+    background-color: rgba(240, 240, 240, 0.94);
+    border-radius: var(--oneRem);
+    box-shadow: 0 1px 5px 1px rgba(23, 5, 76, .3);
+    margin: auto;
+    margin-top: var(--oneEm);
+    padding: var(--oneRem);
+    width: 90%;
+}
+
+.head {
+    grid-column: 1/3;
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.card h3 {
+    font-weight: var(--headingWeight);
+    font-size: var(--oneRem);
+    margin: 0;
+    color: var(--textHeadingColor);
+    transition: color, 200ms ease-in;
+    text-transform: capitalize;
+}
+
+.card h3:hover {
+    color: black;
+}
+
+.card a img {
+    width: var(--cardImgWidth);
+    aspect-ratio: 1/.7;
+    border-radius: var(--cardImgRadius);
+}
+
+.card p {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+/* blog post end  */
+
+@media screen and (min-width: 700px) {
+
+    .content > h4 {
+        --contentHeading: 1.9rem
+    }
+
+    .content span {
+        --contentAuthor: .8rem
+    }
+
+    .content p {
+        --contentPText: 1.1rem
+    }
+
+    .comment h5{
+        font-size: 1.1rem;
+    }
+
+    .comment p {
+        font-size: 1.1rem;
+    }
+
+    .comment div {
+        font-size: .6rem;
+    }
+
+    .comment-body {
+        height: 2.2em;
+        font-size: 1.1em;
+    }
+
+    input[type=submit] {
+        font-size: small;
+    }
+
+    .card {
+        grid-template-columns: 2fr 10fr;
+    }
+
+    .card h3 {
+        --oneRem: 1rem
+    }
+
+    .card a img {
+        --cardImgWidth: 90%;
+    }
+
+    .card p {
+        font-size: .9rem;
+        justify-content: flex-start;
+    }
+
+    .card > a {
+        --readMoreWeight: 700;
+    }
+
+}
