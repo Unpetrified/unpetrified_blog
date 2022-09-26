@@ -1,41 +1,20 @@
+{% extends 'forms.html' %}
 {% load static %}
+{% block title %} <title>Unpetrified | Login</title> {% endblock %}
+{% block form %}
+<form action="{% url 'login' %}?next=/" method="post">
+    {% csrf_token %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block title %} <title>Unpetrified | Login</title> {% endblock %}
-    <link rel="icon" href="{% static 'media\Logo\logo.png' %}">
-    <link rel="stylesheet" href="{% static 'css\register.css' %}">
-</head>
-    <body>
+    <div class="register">Login</div>
 
-        <div class="page-heading">
-        
-            <a href="/"><img src="{% static 'media/Logo/head.png' %}" alt="logo"></a>
-    
-        </div>
-        
-        {% block form %}
-        
-        <form action="{% url 'login' %}?next=/" method="post">
-            {% csrf_token %}
+    {{form.as_p}}
 
-            <div class="register">Login</div>
+    <input type="submit" value="Login" class="btn">
 
-            {{form.as_p}}
+    <!-- important for page redirection -->
+    <input type="hidden" name="next" value="{{ next }}">
 
-            <input type="submit" value="Login" class="btn">
+    <div class="register-link">Not a member? <a href="{% url 'register' %}">Register</a></div>
 
-            <!-- important for page redirection -->
-            <input type="hidden" name="next" value="{{ next }}">
-
-            <div class="register-link">Not a member? <a href="{% url 'register' %}">Register</a></div>
-
-        </form>
-
-        {% endblock %}
-
-    </body>  
-</html>
+</form>
+{% endblock %}
