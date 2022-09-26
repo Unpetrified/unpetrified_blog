@@ -1,0 +1,120 @@
+:root {
+    --btnColor: rgba(240, 240, 240, 0.94);
+    --btnHoverColor: rgb(25, 79, 255);
+    --textHeadingColor: rgba(23, 5, 76);
+    --headingWeight: 900;
+    --oneRem: 1rem;
+    --oneEm: 1em;
+    --author: .53;
+    --cardImgWidth: 100%;
+    --cardImgRadius: .2rem;
+    --readMoreWeight: 500;
+    --readMoreWidth: 40%;
+    --readMoreSpec: .5rem;
+}
+
+/* blog posts start */
+
+.card {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: var(--oneRem);
+    height: fit-content;
+    background-color: rgba(240, 240, 240, 0.94);
+    border-radius: var(--oneRem);
+    box-shadow: 0 1px 5px 1px rgba(23, 5, 76, .3);
+    margin: auto;
+    margin-top: var(--oneEm);
+    padding: var(--oneRem);
+    width: 90%;
+}
+
+.head {
+    grid-column: 1/3;
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.card h3 {
+    font-weight: var(--headingWeight);
+    font-size: var(--oneRem);
+    margin: 0;
+    color: var(--textHeadingColor);
+    transition: color, 200ms ease-in;
+    text-transform: capitalize;
+}
+
+.card h3:hover {
+    color: black;
+}
+
+.card small {
+    font-style: italic;
+    font-size: var(--author);
+}
+
+.card img {
+    width: var(--cardImgWidth);
+    aspect-ratio: 1/.8;
+    border-radius: var(--cardImgRadius);
+}
+
+.card p {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    position: relative;
+}
+
+.card p a {
+    color: var(--textColor);
+    text-align: center;
+    background-color: var(--btnColor);
+    border: 1px solid black;
+    padding: var(--readMoreSpec);
+    width: var(--readMoreWidth);
+    border-radius: var(--readMoreSpec);
+    transition: color, 200ms ease-in;
+    font-weight: var(--readMoreWeight);
+    align-self: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.card p a:hover {
+    background-color: var(--btnHoverColor);
+    color: white;
+}
+
+/* blog post end  */
+
+
+@media screen and (min-width: 700px) {
+
+    .card {
+        width: 96%;
+    }
+
+    .card h3 {
+        --oneRem: 1.4rem
+    }
+
+    .card img {
+        --cardImgWidth: 80%;
+    }
+
+    .card p {
+        font-size: 1.2rem;
+        justify-content: flex-start;
+        height: 60%;
+    }
+
+    .card > a {
+        --readMoreWeight: 700;
+        grid-column: 2;
+    }
+
+}
