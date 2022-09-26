@@ -13,7 +13,7 @@ class Home(generic.ListView):
     model = Post
 
 class Posts(View):
-
+    
     def get(self, request, post_id):
         article = Post.objects.get(id=post_id)
         split_article = article.content.split("\n")
@@ -41,7 +41,7 @@ class Register(View):
 
         if password == password2:
             if len(password) < 8:
-                messages = 'password must be greater than 8 character'
+                messages = 'password must be greater than 8 characters'
                 return render(request, 'registration/register.html', {'error':messages})
 
             if User.objects.filter(username=username).exists():

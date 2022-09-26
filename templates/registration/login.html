@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %} <title>Unpetrified | Login</title> {% endblock %}
 {% block form %}
-<form action="{% url 'login' %}?next=/" method="post">
+<form action="{% url 'login' %}" method="post">
     {% csrf_token %}
 
     <div class="register">Login</div>
@@ -14,7 +14,7 @@
     <!-- important for page redirection -->
     <input type="hidden" name="next" value="{{ next }}">
 
-    <div class="register-link">Not a member? <a href="{% url 'register' %}">Register</a></div>
+    <div class="register-link">Not a member? <a href="{% url 'register' %}?next={% url 'login' %}">Register</a></div>
 
 </form>
 {% endblock %}

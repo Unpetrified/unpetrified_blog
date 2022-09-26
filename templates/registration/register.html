@@ -5,33 +5,29 @@
 
 {% block form %}
 <form action="register" method="POST">
+    
     {% csrf_token %}
 
     <div class="register">Register</div>
 
-    {% for message in messages %}
-        
-    <div class="error">
-        {{message}}
-    </div>
+    <div class="error">{{error}}</div>
     
-    {% endfor %}
+    <p> <label for="">Enter First Name:</label> <input type="text" name="firstName" placeholder="Enter first name" class="text" required> </p>
     
-    <p> <label for="">Enter First Name:</label> <input type="text" name="firstName" placeholder="Enter first name" class="text"> </p>
+    <p> <label for="">Enter Last Name:</label> <input type="text" name="lastName" placeholder="Enter last name" class="text" required> </p>
     
-    <p> <label for="">Enter Last Name:</label> <input type="text" name="lastName" placeholder="Enter last name" class="text"> </p>
+    <p> <label for="">Enter Email:</label> <input type="email" name="email" placeholder="Enter email" class="text" required> </p>
     
-    <p> <label for="">Enter Email:</label> <input type="email" name="email" placeholder="Enter email" class="text"> </p>
+    <p> <label for="">Enter Username:</label> <input type="text" name="username" placeholder="Choose username" class="text" required> </p>
     
-    <p> <label for="">Enter Username:</label> <input type="text" name="username" placeholder="Choose username" class="text"> </p>
+    <p> <label for="">Enter Password:</label> <input type="password" name="password" placeholder="Password" class="text" required> </p>
     
-    <p> <label for="">Enter Password:</label> <input type="password" name="password" placeholder="Password" class="text"> </p>
-    
-    <p> <label for="">Confirm Password:</label> <input type="password" name="password2" placeholder="Confirm password" class="text"> </p>
+    <p> <label for="">Confirm Password:</label> <input type="password" name="password2" placeholder="Confirm password" class="text" required> </p>
     
     <input type="submit" value="Register" class="btn">
+    <input type="hidden" name="next" value="{{ next }}">
 
-    <div class="register-link">Already a member? <a href="{% url 'login' %}?next=/">Login</a></div>
+    <div class="register-link">Already a member? <a href="{% url 'login' %}?next={% url 'index' %}">Login</a></div>
 
 </form>
 {% endblock %}

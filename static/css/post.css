@@ -96,8 +96,9 @@
 }
 
 .comments form p {
-    width: 90%;
+    flex: 1 1 200px;
     margin: auto;
+    margin-left: 1em;
 }
 
 .comments form label {
@@ -105,10 +106,10 @@
 }
 
 .comment-body {
+    width: 100%;
     border: none;
     border-bottom: 1px solid rgb(70, 69, 69);
     background-color: rgb(212, 213, 226);
-    width: 100%;
     font-size: 1.25em;
     height: 1.4em;
     outline: none;
@@ -126,11 +127,6 @@ input[type=submit] {
     color: var(--textColor);
     font-size: smaller;
     border-radius: .2rem;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20%;
 }
 
 input[type=submit]:hover {

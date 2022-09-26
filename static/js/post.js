@@ -22,7 +22,9 @@ $(document).ready(function(){
     }, 1000);
 });
 
-$(document).on('submit', '#comment_form', function(e) {
+$(document).on('submit', '#comment_form', submitFunction(e));
+
+function submitFunction(e) {
     e.preventDefault();
 
     $.ajax({
@@ -38,4 +40,4 @@ $(document).on('submit', '#comment_form', function(e) {
     });
     // document.getElementById('id_comment_body').value = '';
     $('#id_comment_body').val("");
-});
+}

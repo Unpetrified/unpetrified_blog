@@ -53,6 +53,13 @@ form {
     box-shadow: 0 2px 10px 1px rgb(100, 100, 100, .7);
 }
 
+.error {
+    color: rgba(255, 0, 0, 0.8);
+    padding: .5em;
+    text-align: center;
+    width: 100%;
+}
+
 form p {
     width: 90%;
     margin: 1em auto;

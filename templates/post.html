@@ -26,6 +26,8 @@
 
         <div class="comment"></div>
 
+        {% if user.is_authenticated %}
+
         <form id="comment_form">    
             {% csrf_token %}
 
@@ -33,9 +35,16 @@
             <input type="submit" value="comment">
 
         </form>
+
+        {% else %}
+
+       <div class="login-msg" style="text-align: center;opacity: .8;">Login to leave a comment. Click <a href="{% url 'login' %}?next={{request.path}}">here</a></div>
+
+        {% endif %}
+
     </div>
 
-    <div class="row">RECENT POST</div>
+    <div class="row">RECENT POSTS</div>
 
     {% for post in posts reversed %}
 
