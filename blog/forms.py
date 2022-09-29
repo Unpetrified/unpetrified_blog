@@ -2,6 +2,7 @@ from django import forms
 from .models import Post, Comments
 
 class PostForm(forms.ModelForm):
+    error_class = 'error'
     class Meta():
         model = Post
         fields = ['title', 'content', 'photo']

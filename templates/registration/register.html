@@ -5,22 +5,24 @@
 
 {% block form %}
 <form action="register" method="POST">
-    
+
     {% csrf_token %}
 
     <div class="register">Register</div>
 
-    <div class="error">{{error}}</div>
+    {% if error %}
+        <p class="error">{{error}}</p>
+    {% endif %}
+
+    <p> <label for="">First Name:</label> <input type="text" name="firstName" placeholder="Enter first name" class="text" required> </p>
     
-    <p> <label for="">Enter First Name:</label> <input type="text" name="firstName" placeholder="Enter first name" class="text" required> </p>
+    <p> <label for="">Last Name:</label> <input type="text" name="lastName" placeholder="Enter last name" class="text" required> </p>
     
-    <p> <label for="">Enter Last Name:</label> <input type="text" name="lastName" placeholder="Enter last name" class="text" required> </p>
+    <p> <label for="">Email:</label> <input type="email" name="email" placeholder="Enter email" class="text" required> </p>
     
-    <p> <label for="">Enter Email:</label> <input type="email" name="email" placeholder="Enter email" class="text" required> </p>
+    <p> <label for="">Username:</label> <input type="text" name="username" placeholder="Choose username" class="text" required> </p>
     
-    <p> <label for="">Enter Username:</label> <input type="text" name="username" placeholder="Choose username" class="text" required> </p>
-    
-    <p> <label for="">Enter Password:</label> <input type="password" name="password" placeholder="Password" class="text" required> </p>
+    <p> <label for="">Password:</label> <input type="password" name="password" placeholder="Password" class="text" required> </p>
     
     <p> <label for="">Confirm Password:</label> <input type="password" name="password2" placeholder="Confirm password" class="text" required> </p>
     

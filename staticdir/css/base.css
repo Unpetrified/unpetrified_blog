@@ -9,7 +9,7 @@
     --headingHoverColor: rgba(242, 68, 5);
     --headingWeight: 900;
     --bodyTextSize: .7rem;
-    --logoWidth: 90%;
+    --logoWidth: 30em;
     --logoAspectR: 10/1;
     --oneRem: 1rem;
     --oneEm: 1em;
@@ -34,6 +34,10 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
+}
+
+.page-heading a {
+    width: 70%;
 }
 
 img[alt=logo] {
@@ -202,8 +206,14 @@ nav li:hover > a {
 @media screen and (min-width: 700px) {
 
     .page-heading {
-        display: grid;
-        grid-template-columns: 7fr 3fr;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    :root {
+        --logoWidth: 30em;
     }
 
     .nav-toggle-label {
@@ -218,7 +228,6 @@ nav li:hover > a {
 
     nav ul {
         margin: 0;
-        width: 100%;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -226,7 +235,7 @@ nav li:hover > a {
 
     nav li {
         all: unset;
-        padding: .5em 1.5em;
+        padding: .5em 1em;
         transition: color, 200ms ease-in;
     }
 
@@ -244,7 +253,7 @@ nav li:hover > a {
 
     nav a {
         opacity: 1;
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .row {

@@ -9,10 +9,7 @@
     <div class="register">Create Post</div>
     {% csrf_token %}
 
-    {% for field in form %}
-        <div class="error" style="list-style: none;">{{field.errors}}</div>
-        <p> {{field.label_tag}} {{field}} </p>
-    {% endfor %}
+    {{form.as_p}}
  
     <input type="submit" value="Submit" class="btn">
 
