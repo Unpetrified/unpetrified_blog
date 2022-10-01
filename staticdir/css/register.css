@@ -61,6 +61,10 @@ form p {
     flex-direction: column;
 }
 
+form ul {
+    display: none;
+}
+
 form label {
     font-size: 1.2em;
     text-align: left;
@@ -78,11 +82,13 @@ form #id_username, form #id_password {
 }
 
 form .error {
-    color: rgb(182, 35, 35);
-    background-color: rgb(255, 106, 106, .1);
     padding: .5em;
-    border: dotted 1px red;
     text-align: center;
+}
+
+form .error a {
+    color: rgb(182, 35, 35);
+    text-decoration: none;
 }
 
 form .text, form .btn,
