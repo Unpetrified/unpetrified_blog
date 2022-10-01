@@ -192,7 +192,7 @@ nav li:hover > a {
 #me {
     border-radius: var(--oneEm);
     width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 2 / 1;
 }
 
 .row a {
@@ -207,6 +207,10 @@ nav li:hover > a {
 /* about me end  */
 
 @media screen and (min-width: 700px) {
+
+    body {
+        font-size: 1.1em;
+    }
 
     .page-heading {
         display: flex;
@@ -256,14 +260,19 @@ nav li:hover > a {
 
     nav a {
         opacity: 1;
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     .row {
-        font-size: .8rem;
+        font-size: 1rem;
     }
 
     .about-me div {
-        --aboutMeTextSize: .8rem;
+        --aboutMeTextSize: 1.1rem;
+    }
+
+    #me {
+        all:unset;
+        width: 100%;
     }
 }
