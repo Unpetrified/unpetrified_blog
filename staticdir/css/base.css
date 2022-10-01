@@ -10,7 +10,7 @@
     --headingWeight: 900;
     --bodyTextSize: .7rem;
     --logoWidth: 30em;
-    --logoAspectR: 10/1;
+    --logoAspectR: 12/1;
     --oneRem: 1rem;
     --oneEm: 1em;
     --aboutMeTextSize: .6rem;
@@ -190,7 +190,7 @@ nav li:hover > a {
 
 #me {
     border-radius: var(--oneEm);
-    width: 80%;
+    width: 100%;
     aspect-ratio: 1 / 1;
 }
 
