@@ -54,7 +54,7 @@ class Register(View):
                 
             user = User.objects.create_user(first_name = firstName, last_name = lastName, username=username, email=email, password=password)
             user.save()
-            return redirect('login')
+            return redirect('login?next=/')
                 
         else:
             messages = 'Password mismatch'

@@ -83,7 +83,7 @@
 }
 
 .comment div {
-    font-size: .4rem;
+    /* font-size: .4rem; */
     color: gray;
     margin-bottom: .4em;
 }
@@ -194,44 +194,43 @@ input[type=submit]:hover {
 @media screen and (min-width: 700px) {
 
     .content > h4 {
-        --contentHeading: 1.9rem
+        --contentHeading: 2.1rem;
     }
 
     .content span {
-        --contentAuthor: .8rem
+        --contentAuthor: 1.1rem;
     }
 
     .content p {
-        --contentPText: 1.1rem
+        --contentPText: 1.4rem;
     }
 
     .comment h5{
-        font-size: 1.1rem;
+        font-size: 1.3rem;
     }
 
     .comment p {
-        font-size: 1.1rem;
+        font-size: 1.2em;
     }
 
     .comment div {
-        font-size: .6rem;
+        font-size: 1rem;
     }
 
     .comment-body {
         height: 2.2em;
-        font-size: 1.1em;
     }
 
     input[type=submit] {
-        font-size: small;
+        font-size: 1em;
     }
-
+    
     .card {
         grid-template-columns: 2fr 10fr;
     }
 
     .card h3 {
-        --oneRem: 1rem
+        --oneRem: 1.1rem
     }
 
     .card a img {
@@ -239,7 +238,7 @@ input[type=submit]:hover {
     }
 
     .card p {
-        font-size: .9rem;
+        font-size: 1.1rem;
         justify-content: flex-start;
     }
 

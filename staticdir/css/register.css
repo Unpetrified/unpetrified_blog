@@ -139,5 +139,30 @@ form input[type = submit]:hover {
 /* registeration form end  */
 
 @media screen and (min-width: 700px) {
+
+    body {
+        --bodyTextSize: 1.1rem;
+    }
+
+    img[alt=logo] {
+        --logoWidth: 50em;
+        margin: auto auto;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .register {
+        --formNameWeight: 1.7rem;
+    }    
+
+    form {
+        width: 50em;
+    }
+
     
+    form .text, form .btn,
+    form #id_username, form #id_password {
+        height: 2.8em;
+    }
 }
