@@ -38,12 +38,13 @@ body {
 
 .page-heading a {
     width: 70%;
+    height: 100%;
     outline: solid black;
 }
 
 img[alt=logo] {
     width: var(--logoWidth);
-    aspect-ratio: var(--logoAspectR);
+    aspect-ratio: 1 / 1;
     outline: solid red;
 }
 
