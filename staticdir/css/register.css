@@ -8,7 +8,6 @@
     --headingWeight: 700;
     --bodyTextSize: .7rem;
     --logoWidth: 100%;
-    --logoAspectR: 15/1;
     --formNameWeight: 1.4rem;
 }
 
@@ -23,12 +22,16 @@ body {
 
 .page-heading {
     background-color: var(--headingColor);
+    height: 3.5em;
 }
 
+.page-heading a {
+    height: 100%;
+}
+    
 img[alt=logo] {
     width: var(--logoWidth);
-    aspect-ratio: var(--logoAspectR);
-    margin: auto;
+    height: 100%;
 }
 
 /* page heading end  */
