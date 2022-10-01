@@ -45,7 +45,7 @@ body {
 
 img[alt=logo] {
     width: var(--logoWidth);
-    aspect-ratio: 1 / 1;
+    height: 100%;
     outline: solid red;
 }
 
