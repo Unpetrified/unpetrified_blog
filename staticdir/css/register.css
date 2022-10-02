@@ -127,6 +127,12 @@ form input[type = submit]:hover {
     background-color: var(--btnHoverColor);
 }
 
+.done {
+    justify-self: center;
+    align-self: center;
+    padding: 1em .5em;
+}
+
 .register-link {
     align-self: center;
     font-size: .9rem;

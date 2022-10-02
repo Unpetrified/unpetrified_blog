@@ -8,7 +8,6 @@
     --headingWeight: 700;
     --bodyTextSize: .7rem;
     --logoWidth: 100%;
-    --logoAspectR: 15/1;
     --formNameWeight: 1.4rem;
 }
 
@@ -23,12 +22,17 @@ body {
 
 .page-heading {
     background-color: var(--headingColor);
+    height: 3.5em;
 }
 
+.page-heading a {
+    width: 70%;
+    height: 100%;
+}
+    
 img[alt=logo] {
     width: var(--logoWidth);
-    aspect-ratio: var(--logoAspectR);
-    margin: auto;
+    height: 100%;
 }
 
 /* page heading end  */
@@ -61,6 +65,10 @@ form p {
     flex-direction: column;
 }
 
+form ul {
+    display: none;
+}
+
 form label {
     font-size: 1.2em;
     text-align: left;
@@ -78,7 +86,13 @@ form #id_username, form #id_password {
 }
 
 form .error {
-    outline: solid rgb(255, 106, 106) 2px;
+    padding: .5em;
+    text-align: center;
+}
+
+form .error a {
+    color: rgb(182, 35, 35);
+    text-decoration: none;
 }
 
 form .text, form .btn,
@@ -100,6 +114,7 @@ form input[type = submit] {
     border-radius: .2rem;
     width: 40%;
     font-weight: 800;
+    -webkit-appearance: button;
 }
 
 form input[type = submit]:active {
@@ -112,6 +127,12 @@ form input[type = submit]:hover {
     background-color: var(--btnHoverColor);
 }
 
+.done {
+    justify-self: center;
+    align-self: center;
+    padding: 1em .5em;
+}
+
 .register-link {
     align-self: center;
     font-size: .9rem;
@@ -122,3 +143,32 @@ form input[type = submit]:hover {
 }
 
 /* registeration form end  */
+
+@media screen and (min-width: 700px) {
+
+    body {
+        --bodyTextSize: 1.1rem;
+    }
+
+    img[alt=logo] {
+        --logoWidth: 50em;
+        margin: auto auto;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .register {
+        --formNameWeight: 1.7rem;
+    }    
+
+    form {
+        width: 50em;
+    }
+
+    
+    form .text, form .btn,
+    form #id_username, form #id_password {
+        height: 2.8em;
+    }
+}
