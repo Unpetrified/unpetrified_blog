@@ -8,7 +8,7 @@
     <div class="register">Login</div>
 
     {% if form.errors %}
-        <div class="error">Incorrect login details. <a href="{% url 'reset_password' %}">Forgot password?</a></div>
+        <div class="error">Incorrect login details. <a href="{% url 'password_reset' %}">Forgot password?</a></div>
     {% endif %}
 
     {{form.as_p}}

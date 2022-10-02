@@ -22,10 +22,8 @@ $(document).ready(function(){
     }, 1000);
 });
 
-$(document).on('submit', '#comment_form', submitFunction(e));
-
-function submitFunction(e) {
-    e.preventDefault();
+$(document).on('submit', '#comment_form', function(event) {
+    event.preventDefault();
 
     $.ajax({
         type:'POST',
@@ -36,8 +34,11 @@ function submitFunction(e) {
         },
         success : function (data) {
             console.log('success');
+        },
+
+        error : function() {
+            console.log('an error occured')
         }
     });
-    // document.getElementById('id_comment_body').value = '';
     $('#id_comment_body').val("");
-}
+});
