@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-2#6&#c3ujz*sfq&)&i-1*rz1mp^2u*_!6d5o2ta9&#69cnc(kh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['unpetrified.herokuapp.com', '127.0.0.1']
+# ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -135,9 +136,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'kingsleyobiefuna01@gmail.com'
-EMAIL_HOST_PASSWORD = '2001king$'
-# EMAIL_HOST_PASSWORD = os.environ.get('email_password')
+EMAIL_HOST_USER = os.environ.get('email_address')
+EMAIL_HOST_PASSWORD = os.environ.get('email_password')
