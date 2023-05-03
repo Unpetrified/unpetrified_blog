@@ -1,4 +1,4 @@
-$(document).ready(function(){
+d$(document).ready(function(){
     setInterval(function () {
         $.ajax({
             type : 'GET',

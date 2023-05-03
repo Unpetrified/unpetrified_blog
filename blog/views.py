@@ -6,6 +6,7 @@ from .models import Post, Comments
 from .forms import CommentForm, PostForm
 from django.views import View, generic
 from django.http import JsonResponse
+from django.core.mail import send_mail
 
 class Home(generic.ListView):
     template_name = 'index.html'
@@ -17,6 +18,11 @@ class Posts(View):
     def get(self, request, post_id):
         article = Post.objects.get(id=post_id)
         split_article = article.content.split("\n")
+        # send_mail('Django mail', 
+        # 'This is an email sent using smtp with python as the backend.', 
+        # 'kingsleyobiefuna01@gmail.com',
+        # ['obiefunakingsley01@gmail.com'],
+        # fail_silently=False)
         data = {
             'article' : article,
             'contents' : split_article,

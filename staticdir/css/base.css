@@ -167,6 +167,8 @@ nav li:first-child {
 
 nav li:last-child {
     margin-bottom: 1em;
+    background-color: rgb(184, 48, 48);
+    border-radius: 2em;
 }
 
 nav a {
@@ -175,6 +177,11 @@ nav a {
     opacity: 0;
     color: var(--textColor);
     transition: opacity 150ms ease-out;
+}
+
+nav li:last-child a{
+    color: white;
+    padding: .25em;
 }
 
 nav li:hover {

@@ -1,1 +1,0 @@
-web gunicorn unpetrified_blog.wsgi --log-file -
